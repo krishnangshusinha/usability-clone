@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+:root{      /* global variables(such that multiple same color is not to be written multiple times) */
+    --primary-text-color: rgb(61, 60, 60);
+    --secondary-text-color: rgb(72, 71, 71);
+    --accent-color: rgb(54, 54, 249);
+    --accent-color-dark: rgb(38, 38, 162);
+    --padding-inline-section: 20px;
+}
+body{
+    font-family: 'Libre Baskerville', serif;
+    color: var(--primary-text-color);
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+p{ /* paragraph */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: rgb(132, 128, 152);
+    line-height: 1.8rem;
+}
+a{ /*anchor text*/
+    text-decoration: none;  /* so that the underline from the anchor text gets removed */
+    display: inline-block;
+}
+.small-bold-text{
+    font-family: 'Roboto', sans-serif;
+    font-size : 1rem;
+    font-weight: 600;
+}
+.container{
+    max-width: 1180px;
+    margin-inline: auto;    /* helps to margin-inline gives from left right */
+    padding-inline:var(--padding-inline-section);
+    overflow:hidden;    /* it is done so that the content gets hidden if there is an oveflow of content when screen width is decreased */
+}
+.top-banner{
+    background-image: url('./assets/asset\ 32.png');
+    background-color: rgb(238, 34, 136);
+    background-size: 300px;   /* this makes the entire image fit to the banner*/
+}
+.banner-text{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    color:aliceblue;
+    padding: 15px 30px;
+    justify-content: center;    /* aligns the text in center in banner text */
+}
+ul{
+    display: flex;          /* creates flex box of the ul and hence elements gets arranged horizontally */
+    align-items: center;    /* arranges the element center wise vertically */
+    list-style-type: none;  /* bullets gets removed */
+}
+.main-nav{
+    display: flex;        /* creates flex box of the main-nav and hence elements gets arranged horizontally */
+    align-items: center;
+    justify-content: space-between; /* creates a space between the logo and the ul elements */
+    position: relative;
+}
+.company-logo img{
+    margin-top: 20px;
+    width: 200px;
+}
+.nav-links{
+    flex-basis: 730px;   /* it sets the width of the nav-links class as 730px */
+}
+.nav-links ul{
+    justify-content: end;  /* hence all nav-links elements are placed to the right end of screen */
+    gap: 40px;   /* sets a gap of 40px between the li elements */
+}
+.nav-toggle{
+    display: none;
+}
+.hover-links{
+    margin-top:20px;
+    color:rgb(53, 53, 53);    /* normal text color */ 
+    transition: 0.2s ease-out;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 600;
+}
+.hover-links:hover{    /* pseudo class hover causes to change in color of the li elements as cursor is hovered above it */
+    color:rgb(59, 127, 235);   
+}
+.primary-button{
+    background-color: rgb(0, 132, 255);
+    border-radius: 5px;
+    font-weight: 700;
+    color: white !important;   /*makes font color white at any circumstances hence made white */
+    padding: 12px 24px;
+    box-shadow: 0 0 2px grey;  /* adds a box shadow of grey color */
+    transition: 0.2px ease-out;
+}
+.primary-button:hover{  /* pseudo class hover causes to change in color of the li elements as cursor is hovered above it */
+    background-color:rgb(5, 5, 169);
+}
+.secondary-button{
+    border: 0.5px solid rgb(185, 183, 183);    /* border created with grey color having thickness 0.5 px */
+    border-radius: 5px;
+    padding: 12px 24px;
+    transition: 0.2px ease-out;
+    font-weight: 700;
+}
+.secondary-button:hover{
+    border-color:rgb(0, 132, 255);
+}
+.header-section{
+    display: flex;
+    align-items:center;
+    justify-content: center;   /* arranges the two left and right sections centre wise horizontally */
+    gap: 50px;              /* sets a gap of 50px betweent the left and right section */
+}
+header{
+    padding: 50px 20px;
+}
+.header-left{
+    max-width: 40vw;
+}
+.header-left p{
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+.get-started-button{
+    margin-top: 20px;
+}
+.header-right img{
+    width: 100%;   /* the image take 100% of the width of its parent i.e header-right */
+}
+.company-header{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;  /* aligns the text center wise in case of a div */
+}
+.logos{
+    display: flex;   /* all elements under this class gets arranged horizontally */
+    align-items: center;
+    justify-content: space-evenly;  /* aligns elements of flex box evenly along flex direction */
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.logos img{
+    height: 50px;
+}
+.feature-section{
+    margin-top: 250px;
+}
+.feature-header{
+    text-align: center;
+}
+.feature-header h2{
+    font-size: 1.8rem;
+    margin-bottom: 10px; 
+}
+.feature-area{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  /* therefore flex wrap is of wrap type which means multiple elements are wrapped together */
+    justify-content: space-between;  /*elements are equally distributed with space between them */
+    margin-top: 30px;
+    gap: 40px;
+}
+.feature-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;  /* hence now flex box elements are arranged column wise */
+    gap: 10px;
+    max-width: 20vw;
+}
+.feature-card img{
+    width: 50px;
+}
+.feature-section{
+    background-image: url('./assets/asset\ 34.svg');
+    background-repeat: no-repeat;  /* hence if background image is smaller then also it doesnot repeat */
+    background-position: center;   /* therefore the non repeated image is placed at center of the section */
+    background-size: 700px;
+}
+.big-feature-section{
+    margin-top: 150px;
+}
+.big-feature{
+    display: flex;
+    align-items: top;
+    gap: 60px;
+}
+.big-card-img img{
+    width: 40vw;
+}
+.big-card-content{
+    font-family: 'Roboto', sans-serif; 
+}
+.big-card-content p{
+    color:rgb(53, 53, 53);
+}
+.big-card-content h3{
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color:rgb(132, 128, 152);
+    font-weight: lighter;
+}
+.big-card-content img{
+    margin-top: 35px;
+    width: 130px;
+}
+.para{
+    margin-top: 40px;
+    background-image: url('./assets/asset\ 35.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.test-img img{
+    width: 60px;
+}
+.testimonial{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.test-content{
+    margin-top: 20px;
+}
+.test-content h3{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(58, 57, 57);
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+.test-content p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color:gray;
+}
+.example-section{
+    margin-top: 100px;
+}
+.example-header{
+    text-align: center;
+}
+.example-header h2{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.example-area{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 30px;
+    flex-wrap: wrap;
+}
+.example-card{
+    width:23%;    /*width is set 23% since there are 4 cards that needs to be aligned and as well as with certain space between them */
+    position: relative;
+    height: 330px;
+    border-radius: 6px;
+    background: linear-gradient(rgb(0 , 0 , 0 , 0.2),rgb(0 , 0 , 0, 0.9)) , url('./assets/asset\ 36.jpeg');   /* this sets the image as background for the cards and 0.1 to 0.8 is the opacity so it become darker below */
+    background-size: cover;
+}
+.example-card:nth-child(2){   /* using the nth child property where we can define different definations for same class name (this one is of 2nd version/child */
+    
+    background: linear-gradient(rgb(0 , 0 , 0 , 0.2),rgb(0 , 0 , 0, 0.9)) , url('./assets/asset\ 37.jpeg');
+    background-size: cover;
+}
+.example-card:nth-child(3){   /* using the nth child property where we can define different definations for same class name (this one is of 3rd version/child */
+    
+    background: linear-gradient(rgb(0 , 0 , 0 , 0.2),rgb(0 , 0 , 0, 0.9)) , url('./assets/asset\ 38.jpeg');
+    background-size: cover;
+}
+.example-card:nth-child(4){   /* using the nth child property where we can define different definations for same class name (this one is of 4th version/child */
+    
+    background: linear-gradient(rgb(0 , 0 , 0 , 0.2),rgb(0 , 0 , 0, 0.9)) , url('./assets/asset\ 39.jpeg');
+    background-size: cover;
+}
+.example-card h3{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right:20px;
+    color:aliceblue;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.example-card:hover{
+    box-shadow: 0 0 10px rgb(132, 128, 152);
+    transition: 0.2s ease-out;
+}
+
+.lower-content{
+    margin-top: 50px;
+    background-color: #183b56;
+}
+.content h2{
+    color: white;
+    margin-bottom: 20px;
+}
+.content p{
+    color: white;
+}
+.lower-content-text{
+    display: flex;
+    align-items: center;
+}
+.content ul{
+    list-style-type:disc;
+    flex-direction: column;
+    justify-content: start;
+}
+.content li{
+    margin-top: 20px;
+    color: white;
+}
+.lower-img img{
+    width: 60vw;
+}
+.list{
+    font-size: 1rem;
+}
+.cta-section{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 40px;;
+    text-align: center;
+}
+.cta h1{
+    margin-top: 50px;
+}
+.cta p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color:rgb(230, 235, 249);
+}
+.footer-section{
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer-img img{
+    width: 200px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.link-column{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.link-column a{
+    color:rgb(139, 135, 135);
+    padding: 10px;
+}
+.subfooter{
+    background-color: rgb(189, 221, 249);
+}
+.link-column a:hover{    
+    color:dodgerblue;
+}
+.link-column h4{
+    padding-bottom:10px;
+}
+.subfooter-content{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    gap: 50px; 
+    flex-wrap: wrap;
+}
+.subfooter-content:hover{
+    color:rgb(0, 132, 255);
+}
+.subfooter-content img{
+    width: 20px;
+}
+
+
+/* making it responsive */
+
+/* breakpoint-1 */  
+@media screen and (width <= 991px ){
+    .nav-toggle{
+        display: block;
+    }
+    .nav-links{
+        display: none;
+    }
+    .example-card{
+        width: calc(50% - 10px);
+        height:180px;
+    }
+    .example-area{
+        gap: 20px
+    }   
+}
+
+/* breakpoint-2 */
+@media screen and ( width <= 756px) {
+    .header-section{
+        flex-direction: column-reverse;
+    }
+    .header-left{
+        max-width: 100vw;
+        text-align: center;
+    }
+    .primary-button{
+        width: 100%;
+    }
+    .feature-card{
+        min-width: calc(50% - 20px);
+    }
+    .footer-section{
+        flex-direction:column ;
+        gap: 40px;
+        align-items: center;
+    }
+}
+
+
+/* breakpoint-3 */
+@media screen and (width <= 476px){
+    :root{
+        --padding-inline-section: 20px;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .feature-card{
+        min-width: 100%;
+    }
+    .example-card{
+        min-width: 100%;
+    }
+}
